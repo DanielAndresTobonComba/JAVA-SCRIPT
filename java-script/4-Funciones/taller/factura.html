@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function leerNombre(msg) {
+
+            let repita
+            let entrada
+
+
+            do {
+                repita = false
+                entrada = prompt(msg)
+
+                if (entrada.length <= 0 ) {
+                    alert("Ingrese un nombre valido")
+                    repita = true
+                }
+
+                
+            }while (repita)
+
+            return entrada
+
+
+        }
+
+
+        function leerInt(msg){
+
+            let precio
+            let repita 
+
+            do{ 
+                repita = false
+                precio = Number(prompt(msg))
+
+                if (precio == 0 || isNaN(precio) || String(precio).length < 0 || typeof(precio) == String){
+                    alert("Digite un dato valido")
+                    repita = true
+                }
+
+            }while (repita)
+
+            return precio
+
+        }
+
+        function calcularFactura (cantidad , precio) {
+
+            let total 
+
+            total = cantidad * precio 
+
+            return total
+
+            
+        }
+
+
+        
+
+
+        let nombre = leerNombre("Digite el nombre del articulo:") 
+        let precio = leerInt("Digite el precio: ") 
+        let cantidad = leerInt("Cantidad a llevar? ")
+        let total = calcularFactura(cantidad , precio)
+
+        document.write( "-".repeat(15) , "Factura" , "-".repeat(15) , "<br>" )
+        
+        document.write(` Nombre del producto: ${nombre} <br>` )
+        document.write(`Precio: ${precio} <br> `  ,)
+        document.write("EL precio total es: " , total)
+
+
+        
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
