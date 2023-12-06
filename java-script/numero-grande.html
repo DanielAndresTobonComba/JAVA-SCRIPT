@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* function sumarDeNuevo(numero){
+
+            let entero = 0
+
+            if (numero > 10){
+
+                for ( let i = 0 ; i < numero.length ; i++){
+                console.log(numero.length)
+                console.log(typeof(numero[i]))
+                entero = Number(numero[i])
+                acumulador += entero
+                
+                }
+                
+                
+            }
+
+            
+
+        } */
+
+        //console.log(acumulador)
+
+        //sumarDeNuevo(acumulador)
+
+        
+        let numero = prompt("Digite el numero:")
+        let numConcat = Number(prompt("Veces a repetir?: "));
+        let numeroString = ""
+        let cadenaNumeros = 0
+        let acumulador = 0
+        let cadenaEnteros = []
+
+        for (let i = 1; i <= numConcat ; i++){
+            numeroString += numero
+        }
+
+        console.log(numeroString);
+
+        cadenaNumeros = numeroString.split("")
+
+        do { 
+
+            for ( let i = 0 ; i < cadenaNumeros.length ; i++){
+            
+            console.log(cadenaNumeros.length)
+            console.log(typeof(cadenaNumeros[i]))
+            numero = Number(cadenaNumeros[i])
+            acumulador += numero
+            
+            if (acumulador < 10) {
+                console.log("Numero final: " + acumulador)
+                break
+            }
+   
+            }
+
+
+            }while(acumulador>10)
+
+        
+        
+        
+
+       
+        
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
