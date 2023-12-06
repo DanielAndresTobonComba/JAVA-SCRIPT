@@ -1,0 +1,2 @@
+Sacar la herramienta de inspeccion : crtl + shif + i
+Ejecutar codigo por consola : ctrl + alt + n

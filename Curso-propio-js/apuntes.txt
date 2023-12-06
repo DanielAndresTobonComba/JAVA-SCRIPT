@@ -1,0 +1,6 @@
+Si alguna operacion matematica se hace incorrectamente el resultado sera un NaN y se pegara de ahi en adelante en todas las operacion en donde ese resultado se use nuevamente
+
+undefined : Es una valor que no esta asignado 
+
+let age ; 
+alert(age) // muestra "undefinded"
