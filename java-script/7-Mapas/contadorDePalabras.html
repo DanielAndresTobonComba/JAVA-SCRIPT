@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        let texto = prompt("Digite el texto: ")
+        let textoSeparado = ""
+        let listaDePalabras = []
+        let listaDeConteo = []
+
+        
+        
+
+        textoSeparado = texto.split(" ")
+        
+        
+
+        for (let i = 0 ; i <= textoSeparado.length ; i++){
+
+            
+
+            if (listaDePalabras.includes(textoSeparado[i]) ) {
+                console.log(listaDePalabras.indexOf(textoSeparado[i]))
+
+                
+                
+            }
+
+            else {
+                listaDePalabras.push(textoSeparado[i])
+                
+            }
+            
+
+            console.log(listaDePalabras)
+
+            // console.log(typeof( textoSeparado[i]))
+            // palabras.set(i)
+
+            
+            // for(let e = -1  ; e <= listaDePalabras.length ; i++){
+            // }
+
+            
+
+        }
+
+
+
+        
+    </script>
+    
+</body>
+</html>

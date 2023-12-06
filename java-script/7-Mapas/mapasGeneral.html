@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const frutas = new Map(
+            [["Manzanas" , 2500] , 
+            ["Peras" , 2000] , ["Banano" , 2000]])
+
+        console.log(frutas)
+
+        console.log("Cantidad de elementos", frutas.size)
+
+        //Insertar un nuevo objecto en el map
+        frutas.set("Pitaya" , 5000)
+        frutas.set("Mango" , 3000)
+        console.log(frutas)
+
+        //Obtener la llave y su valor
+        console.log("El valor de la fruta de camilo es: " + frutas.get("Mango"))
+
+
+        //ELiminar alguna llave y valor 
+        console.log(frutas.delete("Pepino"))
+        console.log(frutas.delete("Pitaya"))
+        console.log(frutas)
+        console.log("Cantidad de elementos: " , frutas.size)
+
+        // Saber si existe una llave en le diccionario
+        console.log("EL mango existe en la canasta de frutas" , frutas.has("Mango"))
+
+        //Recorrer el map
+        frutas.forEach((v , k ) => {
+            console.log(`El precio de la fruta es ${k} es: ${v}`)
+        })
+        
+        //Vota la pareja de datos como arreglos entonces se usa la posciones para tomar la llave y su valor , esto se logra con el metodo .entries()
+        for (const e of frutas.entries()) {
+            console.log(`El precio de la fruta es ${e[0]} es: ${e[1]}`)
+        }
+
+        //otra forma con const ya que el array es anonimo
+
+        for (const [k , v] of frutas.entries()){
+            console.log(`El precio de ${k} es: ${v}`)
+        }
+
+        //Me devuelve todas las llaves 
+
+        let text 
+        for (const v of frutas.values()){
+            text += v + ","
+        }
+
+        console.log(text)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
