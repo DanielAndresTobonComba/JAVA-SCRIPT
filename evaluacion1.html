@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+
+            <tr>
+
+                <th>Mes</th>
+                <th>Valor</th>
+                <th>Valor total</th>
+                <th>Capital</th>
+                <th>Intereses</th>
+                <th>Total</th>
+
+            </tr>
+
+        </thead> 
+
+        <tbody id="datos">
+
+
+
+        </tbody>
+
+        <tbody id="final">
+
+        </tbody>
+
+    </table>
+    <br><br><br><br><br><br><br>
+
+    <table border="1">
+            <tr>
+                <th>Monto del credito</th> <th id="monto"></th>
+            </tr>
+
+            <tr>
+                <th>Tasa de interes anual</th> <th id="interes"></th>
+            </tr>
+
+            <tr>
+                <th>Numero de pagos</th> <th id="nPagos"></th>
+            </tr>
+
+            <tr>
+                <th>Valor total</th> <th id="valorTotal"></th>
+            </tr>
+
+            <tr>
+                <th>Valor mensual</th> <th id="valorMensual"></th>
+            </tr>
+    </table>
+
+
+    <script>
+
+        function sacarValor(valor , capital){
+            
+            let contador = 2
+            
+            console.log(contador)
+            
+            valor -= capital*contador
+
+            
+
+            return valor
+
+             
+        }
+
+        
+
+        function pintar_html(meses  , valor ,  valorTotal, capital , interesMensual , total) {
+
+            console.log(`Meses ${meses}  Valor ${valor}  Valor total ${valorTotal} Capital ${capital} Intereses ${interesMensual} Total ${total}`)
+
+            console.log(`Meses ${typeof(meses)}  Valor ${typeof( valor)}  Valor total ${typeof(valorTotal)} Capital ${typeof(capital)} Intereses ${typeof(interesMensual)} Total ${typeof(total)}`)
+
+
+            for (let i =0 ; i < meses ; i++){
+                
+                document.getElementById("datos").innerHTML += `
+                <td>${meses - i}</td><td>${valor - (capital*i)}</td>
+                <td>${valorTotal - (total*i)}</td> <td>${capital}</td> 
+                <td>${interesMensual}</td><td>${total}</td> ` 
+                
+
+                
+                
+            }
+
+            document.getElementById("final").innerHTML = `<td></td> <td></td> <td></td> <td>${capital*meses} </td> <td>${interesMensual*meses} </td> <td>${total*meses}</td>   `
+            
+        }
+
+        function calcularPagoMensual (monto , numPagos){ 
+
+            let valor_pagar = monto / numPagos
+
+            return valor_pagar
+
+
+        }
+
+        function calcularIntereses(valor , interes) {
+            let valoInteres = valor*(interes/100)
+            return valoInteres
+        }
+
+        function entradaDatos () {
+
+            let valor =  Number( prompt(" Monto del credito: "))
+            let interes = Number(prompt(" Interes: "))
+            let meses = Number(prompt("Numero de pagos: "))
+
+            let capital = calcularPagoMensual(valor , meses)
+            console.log(capital)
+
+            let interesMensual = calcularIntereses(capital , interes)
+            console.log(interesMensual)
+
+            let total = interesMensual + capital
+            let valorTotal = total *12
+
+            pintar_html (meses  , valor ,  valorTotal, capital , interesMensual , total )
+
+            document.getElementById("monto").innerHTML = valor
+            document.getElementById("interes").innerHTML = interes + "%"
+            document.getElementById("nPagos").innerHTML = meses
+            document.getElementById("valorTotal").innerHTML = "$" + valorTotal
+            document.getElementById("valorMensual").innerHTML = "$" + total
+            
+                
+        }
+
+       entradaDatos()
+
+        
+
+
+    </script>
+    
+</body>
+</html>
