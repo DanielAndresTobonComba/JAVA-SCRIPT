@@ -15,16 +15,19 @@
         <label for="edad">Edad:</label>
         <input type="number" name="edad" id="edad">
 
-        <!-- <input type="submit" value="Enviar"> -->
-        <button onclick="capturarForm()">Enviar</button>
+        
     </form>
+    
+    <!-- Siempre colocar los botones fuer del formulario -->
+    <!-- <input type="submit" value="Enviar"> -->
+    <button onclick="capturarForm()">Enviar</button>
     
     <script>
 
         function capturarForm(){
 
             const form = document.querySelector("form")
-            const formData = new formData(form)
+            const formData = new FormData(form)
 
             
 
@@ -34,6 +37,12 @@
                     //console.log("Puedes entrar a campus")
                 }
             }
+
+            formData.append("nombre" , "Oscar")
+            //obtener todos los valores de la llave nombre 
+            const nombres = formData.getAll("nombre")
+            
+            console.log(nombres)
 
         }
 
