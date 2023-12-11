@@ -1,8 +1,13 @@
 const palabras = ["attempt", "pay", "practice", "attend"]
-let prefijo = "pref"
+let prefijo = "att"
 
-let cadenaPrefijos = palabras.reduce((c, e){
-    if (e.startsWith) {
-        console.log()
-    }
-} )
+function reducirCadena(acumulador, valueCurrent) {
+    console.log(acumulador , valueCurrent);
+}
+
+let cadenaPrefijos = palabras.reduce(reducirCadena)
+
+//console.log(cadenaPrefijos)
+
+
+// (c , e ) => c + (e.startsWith(prefijo))

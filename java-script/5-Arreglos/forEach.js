@@ -6,7 +6,7 @@
 let arr = [4.6 , 2.5 ,2.5 ,2.5]
 
 
-/* arr.forEach(function(e) {
+arr.forEach(function(e) {
     console.log(e)
 }) 
 
@@ -17,7 +17,7 @@ arr.forEach(e => console.log(e))
 
 
 console.log("-".repeat(15))
-arr.forEach(e => console.log(e * 0.8 + 1))  */
+arr.forEach(e => console.log(e * 0.8 + 1))  
 
 
    
