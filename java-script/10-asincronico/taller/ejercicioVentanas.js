@@ -1,7 +1,8 @@
 
-const date = new Date();
+//const date = new Date();
 
-function fecha (){
+function fecha(){
+    const date = new Date();
     let tiempo = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 
     return tiempo
@@ -24,6 +25,7 @@ function fecha (){
 
 
  function EnviadoH(){
+    
     setTimeout(function(){
         let tiempo = fecha()
         console.log(`G [Enviado de : 7] aparecio en: ${tiempo}`
