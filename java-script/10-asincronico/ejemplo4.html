@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function multiplicador (factor) {
+            return function (numero){
+                return numero * factor
+            }
+        }
+
+        //la funcion multiplicador me retorna una funcion entonces la const se convierte en una funcion por eso en multiplicar se toma como una funcion y tienen un parametro
+        const duplicar = multiplicador(2)
+        const triplicar = multiplicador(3)
+
+        console.log(duplicar(5))
+        console.log(triplicar(5))
+    </script>
+    
+</body>
+</html>
