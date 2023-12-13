@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function milisegundosDias(entrega , entregado){
+
+            let milisegundos = -1*(entrega - entregado)
+            //console.log(milisegundos)
+
+            let dias = milisegundos / 86400000 
+            //console.log(dias)
+
+            return dias
+        }
+
+        function crearFechas(fecha1 , fecha2){
+            const entrega= new Date (fecha1)
+            const entregado = new Date (fecha2)
+
+            console.log(entrega)
+            console.log(entregado)
+
+            dias = milisegundosDias(entrega , entregado)
+
+        
+            
+            if( dias >= 1 && dias <= 3 ){
+                console.log("Se excedio por: " + dias + " dias")
+                console.log("La multa es de $7.000 ")
+                
+            }
+
+            else if (dias > 3) {
+                console.log("Se excedio por: " + dias + " dias")
+                console.log("La multa es de $10.000 y una sancion por 6 meses")
+                
+            }
+
+            else {
+                console.log("No hay multa")
+            }
+        }
+
+        function entregaDeDatos(){
+            let fecha1 = prompt("Digite la fecha de entrega estipulada asi: october 30 2023")
+            let fecha2 = prompt("Digite la fecha cuando se entrego asi: october 30 2023")
+            
+            crearFechas(fecha1 ,fecha2)
+        }
+        
+
+
+        entregaDeDatos()
+
+    </script>
+    
+</body>
+</html>
