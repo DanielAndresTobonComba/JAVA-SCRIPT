@@ -18,7 +18,7 @@ async function getNombrePokemon(iteraciones){
     
 }   
 
-
+//pendiente
 
 
 getNombrePokemon(10) 
