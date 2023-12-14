@@ -1,0 +1,8 @@
+Async/await es una característica de JavaScript que simplifica 
+aún más la programación asincrónica. Permite escribir código 
+asincrónico de manera más similar a código síncrono, lo que mejora 
+la legibilidad y la estructura del código.
+
+
+
+REVIZAR ESTO EN CASA

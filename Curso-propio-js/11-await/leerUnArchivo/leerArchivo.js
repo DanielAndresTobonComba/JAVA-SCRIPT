@@ -2,10 +2,10 @@
 
  async function fectData(){
     try{
-        const data = await fs.readFile('a.txt' , 'utf-8')
+        const data = await fs.readFile ('a.txt' , 'utf-8')
         console.log(data)
     }catch (error){
-        console.error("Error al leer el archivo" + error.message)
+        console.error("Error al leer el archivo " + error.message)
     }
 }
 

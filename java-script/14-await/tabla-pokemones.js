@@ -11,11 +11,12 @@ async function getNombrePokemon(iteraciones){
         
         const json = await respuesta.json()
 
-        console.log( json.sprites.front_default)
+        //console.log( json.sprites.front_default)
         /* console.log(json.forms[0].name)
         console.table(i) */
-
-        mapa.set(`${i}:`,json.forms[0].name)
+        
+        mapa.set(`${i}:`,json.forms[0].name )
+        mapa.set(`${i}:`,json.sprites.front_default )
         
 
         }

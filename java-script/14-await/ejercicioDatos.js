@@ -1,4 +1,4 @@
-/* const datos = [
+const datos = [
     {
         id: 1,
         title : "Iron Man", 
@@ -14,33 +14,9 @@
         title:" Avenger endgame",
         year:2017
     }
-] */
-
-//1 sincrono
-
-// const getDatos = () => {
-//     return datos
-// }
-
-// console.log(getDatos())
+] 
 
 
-// 2 asincrono
-
-// const getDatos = () => {
-//     setTimeout(() => {
-        
-//         return datos;
-//     } , 1500)
-
-   
-// }
-
-// console.log(getDatos())
-
-
-// 3 promesas 
-const datos = []
 
 const getDatos = () =>{
     return new Promise((resolve , reject) => {
@@ -54,6 +30,15 @@ const getDatos = () =>{
     })
 }
 
-getDatos () 
-    .then((datos)=> {console.table(datos)})
-    .catch((err)=>{console.error(err.message)})
+// 4 Async await 
+// esperara que la const getDatos retorne la informacion , debe tener el async para usar el await
+async function obtenerDatos (){
+    try {
+        const datosObtenidos = await getDatos()
+        console.table(datosObtenidos)
+    }catch (error){
+        console.log(error(error.mesage))
+    }
+}
+
+obtenerDatos()

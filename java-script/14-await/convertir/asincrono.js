@@ -17,9 +17,6 @@ async function hacerCalculo (iteraciones) {
         
 
         }
-        
-    
-        
 }
 async function leerNumero(numero , i){
     
