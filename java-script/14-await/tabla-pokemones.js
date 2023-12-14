@@ -1,4 +1,6 @@
 async function getNombrePokemon(iteraciones){
+    let mapa = new Map()
+
     for(let i = 1;i <= iteraciones ;i++){
 
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`
@@ -10,12 +12,15 @@ async function getNombrePokemon(iteraciones){
         const json = await respuesta.json()
 
         console.log( json.sprites.front_default)
+        /* console.log(json.forms[0].name)
+        console.table(i) */
 
-        console.table(i)
+        mapa.set(`${i}:`,json.forms[0].name)
+        
 
         }
 
-    
+        console.table(mapa)
 }   
 
 //pendiente
