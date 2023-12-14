@@ -7,7 +7,7 @@ async function getNombrePokemon(iteraciones){
         const respuesta = await fetch(url)
 
         if (!respuesta.ok)
-            throw new Error("Error. Pokemon no existe") 
+            throw ("Error. Pokemon no existe") 
         
         const json = await respuesta.json()
 
@@ -18,7 +18,9 @@ async function getNombrePokemon(iteraciones){
         mapa.set(`${i}:`,json.forms[0].name )
         mapa.set(`${i}:`,json.sprites.front_default )
         
+        document.getElementById("datos").innerHTML += ` <td>${i}</td>  <td>${json.forms[0].name}</td> `
 
+        document.getElementById("imagen") += `${[src = json.sprites.front_default]}`
         }
 
         console.table(mapa)
@@ -29,4 +31,4 @@ async function getNombrePokemon(iteraciones){
 
 getNombrePokemon(10) 
     .then(nombre => console.log(nombre))
-    .catch(error => console.error(error.message))
+    .catch(error => console.log(error.message))
