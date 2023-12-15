@@ -5,67 +5,72 @@ async function escogerPokemonEnemigo(pokemonJugador){
 
     let datosPokemon = new Map()
 
-        setTimeout (()=>{
-            aleatorio()
-            async function aleatorio (){
+    setTimeout (()=>{
+        aleatorio()
+        async function aleatorio (){
 
-                let random = 1 + Math.floor(Math.random() * 806)
-                console.log("random" ,random)
+            let random = 1 + Math.floor(Math.random() * 806)
+            console.log("random" ,random)
 
-                const url= `https://pokeapi.co/api/v2/pokemon/${random}`;
-                const respuesta = await  fetch(url);
+            const url= `https://pokeapi.co/api/v2/pokemon/${random}`;
+            const respuesta = await  fetch(url);
 
-                if (!respuesta.ok)
-                throw new Error("Error. Pokémon 1 no existe");
+            if (!respuesta.ok)
+            throw new Error("Error. Pokémon 1 no existe");
 
-                const json = await respuesta.json();
-                console.log(json)
+            const json = await respuesta.json();
+            //console.log(json)
 
-                const nombre = json.name
-                console.log("nombre" ,nombre)
+            const nombre = json.name
+            //console.log("nombre" ,nombre)
 
-                for (let k = 0 ; k < 6 ;k++){
+            for (let k = 0 ; k < 6 ;k++){
 
-                if (k != 3 && k != 4){
+            if (k != 3 && k != 4){
 
-                    const propiedad = json.stats[k].stat.name
-                    console.log("propiedad" , propiedad)
+                const propiedad = json.stats[k].stat.name
+                //console.log("propiedad" , propiedad)
 
-                    const valor = json.stats[k].base_stat
-                    console.log("valor" , valor)
-                    
-                    datosPokemon.set(propiedad,valor)
-            
-                    }
-                }   
-
-                console.log(datosPokemon)
+                const valor = json.stats[k].base_stat
+                //console.log("valor" , valor)
                 
-                const experiencia = json.base_experience
-                console.log("experiencia",experiencia) 
-
-                const imagen = json.sprites.other["official-artwork"].front_default
-                console.log("imagen", imagen) 
-
-                document.getElementById("imagenPokemonCpu").innerHTML = `<img src="${imagen}" alt="${nombre}" width="100">`
-
-                
-                document.getElementById("datosPokemonCpu").innerHTML = ``
-
-                datosPokemon.forEach((v,k)=>{
-                    document.getElementById("datosPokemonCpu").innerHTML +=  `<p>${k}:${v}</p>`
-                })
-                console.log(datosPokemon.get("speed"))
-
-                combate(pokemonJugador,datosPokemon)
-                    } 
-
-            },1000)
+                datosPokemon.set(propiedad,valor)
         
-    
-    
-    
+                }
+            }   
+
+            //console.log(datosPokemon)
             
+            const experiencia = json.base_experience
+            //console.log("experiencia",experiencia) 
+
+            const imagen = json.sprites.other["official-artwork"].front_default
+            //console.log("imagen", imagen) 
+
+            document.getElementById("imagenPokemonCpu").innerHTML = `<img src="${imagen}" alt="${nombre}" width="100">`
+
+            
+            document.getElementById("datosPokemonCpu").innerHTML = ``
+
+            datosPokemon.forEach((v,k)=>{
+                document.getElementById("datosPokemonCpu").innerHTML +=  `<p>${k}:${v}</p>`
+            })
+            //console.log(datosPokemon.get("speed"))
+            
+            let resultado = combate(pokemonJugador,datosPokemon)
+
+                if (resultado[1] == true){
+                    console.log("Hemos hecho daño") 
+                    return console.log(resultado[0].toFixed(0))
+                }
+                else{
+                    console.log("Hemos recibido daño")
+                    
+                }
+                } 
+
+        },1000)
+             
 }
 
 async function escogerPokemonJugador(){
@@ -73,7 +78,7 @@ async function escogerPokemonJugador(){
     let datosPokemon = new Map()
    
     let random = 1 + Math.floor(Math.random() * 806)
-    console.log("random" , random)
+    //console.log("random" , random)
 
     const url= `https://pokeapi.co/api/v2/pokemon/${random}`;
     const respuesta = await fetch(url);
@@ -82,33 +87,33 @@ async function escogerPokemonJugador(){
         throw new Error("Error. Pokémon 1 no existe");
 
     const json = await respuesta.json();
-    console.log(json)
+    //console.log(json)
 
     const nombre = json.name
-    console.log("nombre" ,nombre)
+    //console.log("nombre" ,nombre)
 
     for (let k = 0 ; k < 6 ;k++){
 
         if (k != 3 && k != 4){
 
         const propiedad = json.stats[k].stat.name
-        console.log("propiedad" , propiedad)
+        //console.log("propiedad" , propiedad)
 
         const valor = json.stats[k].base_stat
-        console.log("valor" , valor)
+        //console.log("valor" , valor)
         
         datosPokemon.set(propiedad,valor)
        
         }
     }
 
-    console.log(datosPokemon)
+    //console.log(datosPokemon)
     
     const experiencia = json.base_experience
-    console.log("experiencia",experiencia) 
+    //console.log("experiencia",experiencia) 
 
     const imagen = json.sprites.other["official-artwork"].front_default
-    console.log("imagen", imagen) 
+    //console.log("imagen", imagen) 
 
     
 
@@ -121,10 +126,15 @@ async function escogerPokemonJugador(){
     })
 
     
-    console.log(datosPokemon.get('speed'))
-    escogerPokemonEnemigo(datosPokemon.get('speed'))
+    //console.log(datosPokemon.get('speed'))
+    
 
-    escogerPokemonEnemigo(datosPokemon)
+    let dañoHecho = escogerPokemonEnemigo(datosPokemon)
+    console.log("daño a imprimir" , dañoHecho)
+
+    datosPokemon.forEach((v,k)=>{
+        document.getElementById("datosPokemonJugador").innerHTML +=  `<p>${k}:${v-parseFloat(dañoHecho)}</p>`
+    })
      
 }
 
@@ -137,24 +147,49 @@ function atacarEnemigo (enemigo , jugador){
     return dañoInfligido
 
 }
+
+function atacarJugador(enemigo , jugador){
+    let vida =  jugador.get("hp")
+    let defensa = jugador.get("defense")
+    let velocidad =jugador.get("speed")
+    let daño = enemigo.get("attack")
+    let dañoInfligido = vida -[defensa*[1 + (velocidad/100)]] - daño
+    return dañoInfligido
+}
     
 function combate (pokemonJugador , pokemonEnemigo){
-    console.log(pokemonJugador)
-    console.log(pokemonEnemigo)
+
+    let turnoJugador = true 
+    let turnoEnemigo = true
+
+
+    // console.log(pokemonJugador)
+    // console.log(pokemonEnemigo)
 
     let velocidadJugador = pokemonJugador.get('speed')
     let velocidadEnemigo = pokemonEnemigo.get('speed')
 
     console.log(velocidadJugador,velocidadEnemigo)
 
-    if (velocidadJugador > velocidadEnemigo){
-        atacarEnemigo(pokemonEnemigo , pokemonJugador)
+    if (velocidadJugador > velocidadEnemigo && turnoJugador == true){
+        turnoJugador = true
+        let daño = atacarEnemigo(pokemonEnemigo , pokemonJugador)
+        console.log("Daño hecho",daño)
+        return [daño , turnoJugador]
     }
-    else {
-        atacarJugardo(pokemonJugador)
+    else if (velocidadJugador < velocidadEnemigo && turnoEnemigo == true) {
+        turnoEnemigo = false
+        let daño = atacarJugador(pokemonEnemigo , pokemonJugador)
+        console.log("Daño recibido",daño)
+        return [daño , turnoEnemigo]
     }
+
+
 
 
 }
+
+
+
 
 
