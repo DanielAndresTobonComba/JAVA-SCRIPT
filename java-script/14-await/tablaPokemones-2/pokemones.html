@@ -6,6 +6,27 @@
     <title>Document</title>
 
     <style>
+        #seccionPokemones{
+            display: flex;
+            margin: 0px auto;
+            padding: 20px;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #pokemon1 , #pokemon2{
+            border: solid;
+            margin: 20px;
+        }
+
+        #datosPokemones{
+            border: solid;
+            margin: 20px;
+        }
 
     </style>
 
@@ -16,15 +37,48 @@
     
     <h2>Listado de pokemones</h2> 
 
-    <div id="seccionPokemones" >
+    <div id="seccionPokemones" >    
+        
+        <section>
+            <div id="pokemon1" >
 
-        <div id="pokemon1" >
+            
+            </div>
 
-        </div>
+            <section id="datosPokemones">
+                <div id="idPokemon1">
+    
+                </div>
+        
+                <div id="nombrePokemon1">
+        
+                </div>
+            </section>
+    
+            
+        </section>
 
-        <div id="pokemon2">
+        <section>
+            <div id="pokemon2" >
+            
+            
+            </div>
+    
+            <section id="datosPokemones">
+                <div id="idPokemon2">
+    
+                </div>
+        
+                <div id="nombrePokemon2">
+        
+                </div>
+            </section>
+        </section>
 
-        </div>
+        
+
+        
+        
     
     </div>
 
@@ -42,34 +96,29 @@
                 const url1 = `https://pokeapi.co/api/v2/pokemon/${id1}`;
                 const respuesta1 = await fetch(url1);
 
-                /* const url2 = `https://pokeapi.co/api/v2/pokemon/${id2}`;
-                const respuesta2 = await fetch(url2);
-                console.log(respuesta2) */
+                
 
                 if (!respuesta1.ok)
                     throw new Error("Error. Pokémon 1 no existe");
 
-                /* else if (!respuesta2.ok)
-                    throw new Error("Error. pokemon 2 no existe") */
-
+                
 
                 const json1 = await respuesta1.json();
-                /* const json2 = await respuesta2.json();
-                console.log(json2) */
+                
 
                 const nombre1 = json1.forms[0].name;
-                /* const nombre2 = json2.forms[0].name;
-                console.log(nombre2) */
+                
 
                 const imagen1 = json1.sprites.front_default;
-               /*  const imagen2 = json2.sprites.front_default;
-                console.log(imagen2) */
+                
 
                 
                 
                 document.getElementById("pokemon1").innerHTML = `<img src="${imagen1}" alt="${nombre1}" width="100">`
+                document.getElementById("idPokemon1").innerHTML =  `<p>${id1}</p>`
+                document.getElementById("nombrePokemon1").innerHTML = `<p>${nombre1}</p>`
 
-                /* document.getElementById("pokemon2").innerHTML = `<img src="${imagen2}" alt="${nombre2}" width="100">` */
+                
                 
 
                 
@@ -100,6 +149,10 @@
                 console.log(imagen2) 
 
                 document.getElementById("pokemon2").innerHTML = `<img src="${imagen2}" alt="${nombre2}" width="100">`
+
+                document.getElementById("idPokemon2").innerHTML =  `<p>${id2    }</p>`
+                document.getElementById("nombrePokemon2").innerHTML = `<p>${nombre2}</p>`
+                
         
                  
                 
