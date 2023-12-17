@@ -10,19 +10,21 @@ function fecha(){
 
 
 //Imprimir los pokemones primera vez
-async function imprimirDatosEnemigo (datos , nombre , imagen){
-    document.getElementById("imagenPokemonCpu").innerHTML = `<img src="${imagen}" alt="${nombre}" width="100">`
+async function imprimirDatosEnemigo (datos){
+    // document.getElementById("imagenPokemonCpu").innerHTML = `<img src="${imagen}" alt="${nombre}" width="100">`
 
     document.getElementById("datosPokemonCpu").innerHTML = ``
-    datos.forEach((v,k)=>{
-        
+    
+    datos.forEach((v,k)=>{ 
     document.getElementById("datosPokemonCpu").innerHTML +=  `<p>${k}:${v}</p>`
     })
+
+
 }
 
 
 async function imprimirDatosJugador (datos , nombre , imagen){
-    document.getElementById("imagenPokemonJugador").innerHTML = `<img src="${imagen}" alt="${nombre}" width="100">`
+    document.getElementById("imagenPokemonJugador").innerHTML = `<img src="${imagen}" alt="${nombre}" width="200">`
 
     document.getElementById("datosPokemonJugador").innerHTML = ``
     datos.forEach((v,k)=>{
@@ -42,12 +44,13 @@ async function buscarUrl (id) {
 }
 
 async function  escogerPokemonEnemigo(){
-    
+
+    let datosPokemonEnemigo = new Map()
     let resta = 0
    
     do{ 
         let inicio = fecha()
-        let datosPokemonEnemigo = new Map()
+       
 
         let numeroRandom = 1 + Math.floor(Math.random() * 806)
         let respuesta = await buscarUrl(numeroRandom)
@@ -73,16 +76,22 @@ async function  escogerPokemonEnemigo(){
             }
         }
 
+        document.getElementById("datosPokemonCpu").innerHTML = ``
+
+        document.getElementById("imagenPokemonCpu").innerHTML = `<img src="${imagen}" alt="${nombre}" width="200" >`
+
         
 
-        imprimirDatosEnemigo(datosPokemonEnemigo , nombre , imagen)
+       
         let fin = fecha()
         resta += fin - inicio
         
 
     }while (resta < 7000)
 
-   
+    
+    imprimirDatosEnemigo(datosPokemonEnemigo)
+    botonPelea.disabled = false
 }
 
 async function escogerPokemonJugador(){
@@ -113,7 +122,7 @@ async function escogerPokemonJugador(){
         }
     }
 
-    botonPelea.disabled = false
+    
 
     imprimirDatosJugador(datosPokemonJugador , nombre , imagen)
 
