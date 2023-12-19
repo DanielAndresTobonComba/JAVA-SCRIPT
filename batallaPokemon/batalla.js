@@ -143,6 +143,7 @@ function atacarEnemigo (enemigo , jugador){
     let defensa = enemigo.get("defense")
     let velocidad =enemigo.get("speed")
     let daño = jugador.get("attack")
+    
     let dañoInfligido = vida -[defensa*[1 + velocidad/100]] - daño
     return dañoInfligido
 
