@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista-dinamica">
+
+        <button onclick="agregarItems()">Agregar elementos a la lista</button>
+
+        <template>
+
+            <li class="list">
+                <b>Nombre:</b> <span class="text-danger">Info items..</span>
+            </li>
+    
+        </template>
+
+    </ul>
+
+    <script>
+        function agregarItems(){
+
+            //obtenemos la lista
+            const lista = document.getElementById("lista-dinamica")
+
+            const items = ["item 1" , "item 2" , "item 3"]
+            
+            //creamos el fragmento
+            const frag =document.createDocumentFragment()
+
+            //tomamos el contenido del template
+            const temp = document.querySelector("template").content
+
+            items.forEach(item =>{
+
+                //obtenermos el span de cada template
+                temp.querySelector("span").textContent = item
+
+                //clonamos el template
+                const clone = temp.cloneNode(true)
+
+                //colocamos el clone en el frag
+
+                frag.appendChild(clone)
+            })
+
+            //imprimimos en la lista el fragmento con todos los clones
+            lista.appendChild(frag)
+
+
+        }
+    </script>
+</body>
+</html>
