@@ -6,6 +6,12 @@
     <title>Document</title>
 
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
         .seccionTitulo{
             display: flex;
@@ -106,6 +112,8 @@
 
     <script>
 
+        let numero = 0
+
         
         function eliminar (){
             let contenedor = document.querySelector(".seccionTarjetas")
@@ -133,6 +141,8 @@
         }
 
         function guardar(){
+            numero ++
+
             let pregunta = document.getElementById("pregunta").value
             let respuesta = document.getElementById("respuesta").value
 
@@ -143,7 +153,7 @@
             let elemento = document.createElement("div")
 
             elemento.innerHTML = `
-            <button class="botonX" onclick="eliminarTarjeta()">X</button>
+            <button class="botonX" onclick="">X</button>
             <hr>
             <h3>${pregunta}</h3> 
 
@@ -155,6 +165,7 @@
             elemento.setAttribute("class" , "tarjeta")
             elemento.setAttribute("onclick" , "mostrarRespuesta()")
             elemento.setAttribute("name" , "opcion")
+            
             
             
 
