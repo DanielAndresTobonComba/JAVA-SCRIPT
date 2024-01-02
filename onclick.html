@@ -7,13 +7,14 @@
 </head>
 <body>
     
-    <button onclick="boton()" name="xd">1</button>
-    <button onclick="boton()" name="xd">2</button>
+    <button onclick="boton(1)" name="xd">1</button>
+    <button onclick="boton(2)" name="xd">2</button>
 
     <script>
 
-        function boton(){
+        function boton(dato){
             let cual = document.querySelector('[name=xd]:checked')
+            alert("fue el" + dato)
         }
 
     </script>

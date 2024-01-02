@@ -80,6 +80,13 @@
             margin: 10px;
         }
 
+        .ocultar{
+            visibility: hidden;
+        }
+
+        .mostar{
+            visibility: visible;
+        }
 
     </style>
 </head>
@@ -113,7 +120,7 @@
     <script>
 
         let numero = 0
-
+        let contador = 0
         
         function eliminar (){
             let contenedor = document.querySelector(".seccionTarjetas")
@@ -141,36 +148,48 @@
         }
 
         function guardar(){
+
             numero ++
 
             let pregunta = document.getElementById("pregunta").value
             let respuesta = document.getElementById("respuesta").value
 
-            console.log(pregunta)
-
             let contenedor = document.querySelector(".seccionTarjetas")
 
             let elemento = document.createElement("div")
 
+            elemento.setAttribute( "id" , `div${numero}`)
+
             elemento.innerHTML = `
-            <button class="botonX" onclick="">X</button>
+            <button class="botonX" onclick="div${numero}.remove()">X</button>
             <hr>
             <h3>${pregunta}</h3> 
 
-            <p> ${respuesta} </p>
-           
+            <section onclick="mostrar(parrafo${numero})">
+                <p id="parrafo${numero}" >${respuesta}</p>
+            </section>
+            <p>  </p>
             
-`
-
+            `
             elemento.setAttribute("class" , "tarjeta")
-            elemento.setAttribute("onclick" , "mostrarRespuesta()")
-            elemento.setAttribute("name" , "opcion")
-            
-            
-            
-
-
             contenedor.appendChild(elemento)
+        }
+
+        function mostrar(elemento){
+            
+            
+            
+            console.log(elemento)
+
+            if (contador%2 == 0){
+               elemento.setAttribute("class" , "ocultar")
+               elemento.removeAttribute("mostrar")
+            } else {
+                elemento.setAttribute("class" , "mostrar")
+                elemento.removeAttribute("ocultar")
+            }
+
+            contador ++
         }
 
         function cerrar(){
