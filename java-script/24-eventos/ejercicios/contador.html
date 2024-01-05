@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        main{
+            background-color: yellow;
+            height: 200px;
+            text-align: center;
+            border-radius: 30px;
+            margin: 0px 20px;
+            
+        }
+
+        #aumentar{
+            background-color: blue;
+            height: 40px;
+            font-weight: 800;
+        }
+
+        #disminuir{
+            background-color: red;
+            height: 40px;
+            color: white;
+            font-weight: 800;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <main>
+        <h3>Ejemplo Eventos Js - Aumentar y Disminuir</h3>
+
+    <h2>Contador</h2>
+    <div>
+        <button id="aumentar">Aumentar</button>
+        <button id="disminuir">Disminuir</button>
+    </div>
+
+    <h3>Contador <span id="spamear">0</span></h3>
+
+    </main>
+
+    <script>
+
+        let botonAumentar = document.getElementById("aumentar")
+        let botonDisminuir = document.getElementById("disminuir")
+        let parrafo = document.getElementById("spamear")
+        let numero = parrafo.textContent
+        console.log(numero)
+
+        function aumentar() {
+            numero ++
+            parrafo.textContent = numero
+        }
+
+        function disminuir() {
+            numero --
+            parrafo.textContent = numero
+        }
+
+        botonAumentar.addEventListener("click" , aumentar)
+        botonDisminuir.addEventListener("click",disminuir)
+
+    </script>
+</body>
+</html>

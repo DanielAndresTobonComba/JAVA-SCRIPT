@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            transition: background-color 0.5s;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <button id="changeColor">Cambiar Color</button>
+
+
+    <script>
+
+        const letters = "0123456789ABCDEFG"
+
+        const button = document.getElementById("changeColor")
+
+        const changeBackgroundColorRandom = () => 
+            document.body.style.backgroundColor = getRandomColor()
+
+        const getRandomColor = () => Array(6).fill("").reduce(
+            p => p += letters[Math.floor(Math.random()*16)] , "#"
+        )
+
+        button.setAttribute("onclick" , "changeBackgroundColorRandom()")
+        
+    </script>
+</body>
+</html>
