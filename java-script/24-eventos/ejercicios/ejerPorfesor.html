@@ -13,9 +13,25 @@
 <body>
 
     <script>
-        let boton1 = document.getElementById("ficha1")
-        let tecla1 = boton1.addEventListener("keypress")
-        console.log(tecla1)
+        const divs = document.getElementsByClassName ("oculto")
+
+        window.addEventListener("keypress" , function(event){
+            if (event.key == "1"){
+                divs[0].style.display = "block"
+                divs[1].style.display = "none"
+                divs[2].style.display = "none"
+            }
+            else if(event.key == "2"){
+                divs[0].style.display = "none"
+                divs[1].style.display = "block"
+                divs[2].style.display = "none"
+            }
+            else if(event.key == "3"){
+                divs[0].style.display = "none"
+                divs[1].style.display = "none"
+                divs[2].style.display = "block"
+            }
+        })
     </script>
 
     <div class="oculto" id="ficha1">
