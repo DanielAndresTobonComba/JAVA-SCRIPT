@@ -19,7 +19,7 @@
         <div>
 
             <label for="entradaFarenheit">Grados Farenheit</label>
-            <input type="" name="valor2" id="entradaFarenheit">
+            <input type="" name="valor2" id="entradaFarenheit" >
 
         </div>
 
@@ -52,16 +52,19 @@
         function ACentigrados (){
 
             let gradosFarenheit = Number(document.getElementById("entradaFarenheit").value)
+            let caja = document.getElementById("entradaFarenheit")
 
             let resultado = document.getElementById("entradaCentigrados")
 
             console.log(gradosFarenheit)
 
-            if (Number.isNaN(gradosFarenheit) || resultado.value == "") {
+            if (Number.isNaN(gradosFarenheit)) {
                 resultado.value = `Digite numeros`
             } else {
                 let centigrados = calcularCentigrados(gradosFarenheit)
                 resultado.value = `${centigrados.toFixed(1)} `
+                resultado.style.backgroundColor = "#71ff74"
+                caja.style.backgroundColor = "#feff64"
             }
 
         }
@@ -70,16 +73,20 @@
         function AFarenheit (){
 
             let gradosCentigrados = Number(document.getElementById("entradaCentigrados").value)
+            let caja = document.getElementById("entradaCentigrados")
 
             console.log(gradosCentigrados)
 
             let resultado = document.getElementById("entradaFarenheit")
 
-            if (Number.isNaN(gradosCentigrados) || resultado.value == "") {
+            if (Number.isNaN(gradosCentigrados)) {
                 resultado.value = `Digite numeros`
             } else {
                 let farenheit = calcularFarenheit(gradosCentigrados)
                 resultado.value = `${farenheit.toFixed(1)} `
+                resultado.style.backgroundColor = "#71ff74"
+                caja.style.backgroundColor = "#feff64"
+
             }
         
         }
@@ -90,8 +97,8 @@
 
             let entradaFarenheit = document.getElementById("entradaFarenheit")
 
-            entradaCentigrados.addEventListener("change", AFarenheit)
-            entradaFarenheit.addEventListener("change" , ACentigrados)
+            entradaCentigrados.addEventListener("keyup", AFarenheit)
+            entradaFarenheit.addEventListener("keyup" , ACentigrados)
         }
 
         
