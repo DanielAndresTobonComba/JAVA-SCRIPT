@@ -1,13 +1,5 @@
-let d = document
-let arregloNumeros = []
 
-function tomarValores (valor1 , valor2=0){
-
-    console.log("Valor1" + valor1)
-    return
-}
-
-function obtenerValor (){
+/* function obtenerValor (){
   
     let boton = this
     let valor = boton.value
@@ -39,10 +31,46 @@ function obtenerValor (){
     }
     
     
+} */
+
+let d = document
+let cadena = ""
+let operador = ""
+
+d.querySelector(".igual").addEventListener("click" , operar)
+
+for (let i = 0; i <= 9; i++) {
+    d.querySelector(".numero" + i).addEventListener("click", obtenerValor);
 }
 
-function sumar (arreglo){
+
+for (let i = 1; i <= 4; i++) {
+    d.querySelector(".operacion" + i).addEventListener("click", obtenerValor);
+}
+
+//console.log(botones)
+
+function obtenerValor (){
+    let valor = this.textContent
+    cadena += valor
+    console.log(cadena)
+}
+
+function obtenerOperador (boton){
+    let valor = boton.textContent 
+    console.log(valor)
     
+}
+
+
+function operar(){
+    let suma = cadena.split("+")
+    console.log(suma)
+}
+
+
+
+function sumar (){
     
 }
 
@@ -58,19 +86,6 @@ function dividir (){
     
 }
 
-/* Operaciones basicas */
-d.querySelector(".sumar").addEventListener("click" , sumar)
-d.querySelector(".restar").addEventListener("click" , restar)
-d.querySelector(".multiplicar").addEventListener("click" , multiplicar)
-d.querySelector(".dividir").addEventListener("click" , dividir)
 
-/* Click en los botones */
-
-for (let i = 0; i <= 9; i++) {
-    d.querySelector(".numero" + i).addEventListener("click", obtenerValor);
-}
-/* d.querySelector(".igual").addEventListener("click" , sumar)
-d.querySelector(".decimal").addEventListener("click" , sumar)
-d.querySelector(".sumar").addEventListener("click" , sumar)  */
 
 
