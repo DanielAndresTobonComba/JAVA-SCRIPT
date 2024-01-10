@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .grid-container{
+            margin: 0px auto;
+            background-color: #2196f3;
+            padding: 10px;
+            display: grid;
+            width: 70%;
+
+
+            grid-template-areas: "operar operar operar operar"
+                                "suma resta mult div"
+                                "num7 num8 num9 igual"
+                                "num4 num5 num6 igual"
+                                "num1 num2 num3 igual"
+                                "num0 decimal Ac igual ";
+                                
+
+            grid-template-columns: auto*4 ;
+            grid-auto-rows: auto*6 ;
+        }
+
+        .sumar{
+            grid-area: suma;
+        }
+        .restar{
+            grid-area: resta;
+        }
+        .multiplicar{
+            grid-area: mult;
+        }
+        .dividir{
+            grid-area: div;
+        }
+
+
+        .numero0{
+            grid-area: num0 ;
+        }
+
+        .numero1{
+            grid-area: num1 ;
+        }
+        .numero2{
+            grid-area: num2 ;
+        }
+        .numero3{
+            grid-area: num3 ;
+        }
+        .numero4{
+            grid-area: num4 ;
+        }
+        .numero5{
+            grid-area: num5 ;
+        }
+        .numero6{
+            grid-area: num6 ;
+        }
+        .numero7{
+            grid-area: num7 ;
+        }
+        .numero8{
+            grid-area: num8 ;
+        }
+        .numero9{
+            grid-area: num9 ;
+        }
+
+        .areaOperar{
+            grid-area: operar;
+        }
+
+        .igual{
+            grid-area: igual;
+        }
+
+        .decimal{
+            grid-area: decimal;
+        }
+
+        .Ac{
+            grid-area: Ac;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <div class="areaOperar">0</div>
+
+        <button class="operacion">+</button>
+        <button class="operacion">-</button>
+        <button class="operacion">x</button>
+        <button class="operacion">/</button>
+
+        <button value="0" class="numero">0</button>
+        <button value="1" class="numero">1</button>
+        <button value="2" class="numero">2</button>
+        <button value="3" class="numero">3</button>
+        <button value="4" class="numero">4</button>
+        <button value="5" class="numero">5</button>
+        <button value="6" class="numero">6</button>
+        <button value="7" class="numero">7</button>
+        <button value="8" class="numero">8</button>
+        <button value="9" class="numero">9</button>
+
+        <button class="igual">=</button>
+        <button value="." class="decimal">.</button>
+        <button class="Ac">Ac</button>
+        
+        
+    </div>
+
+    <script src="calculadora.js"></script>
+    
+</body>
+</html>
