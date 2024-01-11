@@ -35,7 +35,8 @@
 
 let d = document
 let cadena = ""
-let operador = ""
+//let operador = ""
+let cadenaOperadores = ["+" , "-" , "*" , "/"]
 
 d.querySelector(".igual").addEventListener("click" , operar)
 
@@ -64,8 +65,31 @@ function obtenerOperador (boton){
 
 
 function operar(){
-    let suma = cadena.split("+")
-    console.log(suma)
+    
+    for(let i = 0; i < cadenaOperadores.length ; i++ ){
+        
+        let arregloCadena = cadena.split(cadenaOperadores[i])
+
+
+        if(arregloCadena.length > 1 ){
+            
+            console.log(cadenaOperadores[i])
+            if(cadenaOperadores[i] == "+"){
+                console.log("es una suma")
+                break
+            }else if(cadenaOperadores[i] == "-"){
+                console.log("es una resta")
+                break
+            }else if (cadenaOperadores[i] == "*"){
+                console.log("es un multiplicacion")
+            }else if (cadenaOperadores[i] == "*"){
+                console.log("es una division")
+            }else{
+                alert("error")
+            }
+        } 
+    }
+    
 }
 
 
