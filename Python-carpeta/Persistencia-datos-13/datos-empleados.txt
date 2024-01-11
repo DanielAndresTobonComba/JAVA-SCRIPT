@@ -1,8 +1,0 @@
-ID,NOMBRE, EDAD , SEXO ,TELEFONO 
-12,Brandom Edilson Herrera Caceres,20,M,218461843276
-13,Camilo Andres Hernandez TOrres,25,M ,85628472832
-14,Carlos Jhon Aguilar Celvis,22,M,87567395423
-15,Christian Leonardo Celis Ardila,30,M,4856283674
-16,Daniel Alberto Cruz Porras,28,M,9327429387
-17,Daniel andres Tobon Comba,22,M,23847762347 
-
