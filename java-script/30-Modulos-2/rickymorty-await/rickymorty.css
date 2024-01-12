@@ -1,0 +1,46 @@
+img{
+    height: 170px;
+    border-radius: 20px;
+}
+
+
+h2 , p{
+    margin: 0px;
+}
+
+div{
+    border-radius: 20px;
+    border: solid;
+    width: 170px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+}
+
+div:hover{
+    
+    background-color: rgb(207, 203, 203);
+    width: 200px;
+    
+    transition: background-color 0.5s;
+    transition: width 0.5s;
+
+}
+div:hover img{
+    width: 180px;
+    height: 180px;
+    transition: width 0.5s;
+    transition: height 0.5s;
+}
+/* img:hover{
+    width: 180px;
+    height: 180px;
+    transition: width 0.5s;
+    transition: height 0.5s;
+} */
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
