@@ -5,5 +5,6 @@ fetch("http://localhost:3001/trainers?nombres=Carlos" , {
     },
 })
 
+
 .then((response)=> response.json())
 .then((json) => console.log(json))

@@ -1,9 +1,9 @@
-import { post } from "./../models/post.js";
-import { get } from "./../models/get.js";
-import { put } from "./../models/put.js";
-import { delet } from "./../models/delete.js";
+import { post } from "../models/post.js";
+//import { get } from "./../models/get.js";
+//import { put } from "./../models/put.js";
+//import { delet } from "./../models/delete.js";
 
-import { llenarFormulario, llenarSelect } from "./../views/utils.js";
+//import { llenarFormulario, llenarSelect } from "./../views/utils.js";
 
 export function controlador(formu, event, entidad, elemformu) {
   const URL = "http://localhost:4000/";
