@@ -1,7 +1,7 @@
-fetch("http://localhost:3001/trainers/3" , {
+fetch("http://localhost:3001/trainers/1" , {
     method : "PATCH",
     body : JSON.stringify({
-        edad : 18
+        edad : 25
     }),
     headers:{
         "Content-type": "application/json; charset=UTF-8"

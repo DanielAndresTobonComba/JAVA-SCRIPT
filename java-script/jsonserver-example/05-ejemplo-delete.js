@@ -1,4 +1,4 @@
-fetch("http://localhost:3001/trainers/3" , {
+fetch("http://localhost:3001/campers/1" , {
     method : "DELETE",
    
 })

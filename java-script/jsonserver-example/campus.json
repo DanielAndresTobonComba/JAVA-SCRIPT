@@ -4,7 +4,8 @@
       "id": "1",
       "nombres": "Carlos",
       "apellidos": "Rueda",
-      "especialidad": "backend java"
+      "especialidad": "backend java",
+      "edad": 25
     },
     {
       "id": "2",
@@ -12,16 +13,42 @@
       "apellidos": "Luis",
       "especialidad": "javascript",
       "sexo": "m",
-      "edad": "25"
+      "edad": 25
+    },
+    {
+      "id": "3",
+      "nombres": "Yulieth",
+      "apellidos": "Rueda",
+      "especialidad": "FullStack python",
+      "sexo": "f",
+      "edad": 21
     }
   ],
   "campers": [
     {
-      "id": "1",
-      "nombres": "Luis",
-      "apellidos": "Ariza",
-      "trainerId": "1"
+      "id" : 2,
+      "nombre" : "Lorenzo" ,
+      "salones": [
+        {
+          "id": 1,
+          "nombre": "Apolo"
+        },
+        {
+          "id": 2,
+          "nombre": "Artemis"
+        }
+      ] 
     }
   ],
-  "salones": []
+  
+  "salones": [
+    {
+      "id": "1",
+      "nombres": "Apolo"
+    },
+    {
+      "id": "2",
+      "nombres": "Sputnik"
+    }
+  ]
 }

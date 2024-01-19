@@ -6,7 +6,7 @@ fetch("http://localhost:3001/trainers/3" , {
         apellidos: 'Rueda',
         especialidad: 'FullStack python', 
         sexo : "f",
-        edad : 20
+        edad : 21
     }),
     headers:{
         "Content-type": "application/json; charset=UTF-8"

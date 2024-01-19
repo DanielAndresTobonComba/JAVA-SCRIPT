@@ -1,10 +1,13 @@
-fetch("http://localhost:3001/trainers" , {
+fetch("http://localhost:3001/campers" , {
     method : "POST",
     body : JSON.stringify({
-        id: '2',
+        id: '1',
         nombres: 'Yulieth',
-        apellidos: 'Rueda',
-        especialidad: 'FullStack python' 
+        apellidos: "Ariza",
+        trainerId: "1",
+        salonId: "1",
+        sexo : "f",
+        edad : "21"
     }),
     headers:{
         "Content-type": "application/json; charset=UTF-8"
