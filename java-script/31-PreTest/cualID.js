@@ -5,13 +5,12 @@ let array = [
     { "id": "2" },
     { "id": "1" },
     { "id": "4" },
-    
-
-
 ]
+
 let objeto = new Object()
 
 let numeros = []
+
 let arregloObjetos = []
 
 array.forEach(objeto => {
@@ -24,7 +23,6 @@ array.forEach(objeto => {
 
             if (ident == subObjeto.id) {
                 subObjeto.ident.push(ident)
-
             }
         })
 
@@ -34,17 +32,10 @@ array.forEach(objeto => {
 
         objeto.ident = [ident]
 
-
-
         arregloObjetos.push(objeto)
-
 
         /* console.log(arregloObjetos[0].ident) */
     }
-
-
-
-
 })
 
 console.log("objeto" + objeto)
