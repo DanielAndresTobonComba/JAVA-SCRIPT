@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let x1 = 0
+        let x2 = 0
+
+        let a = Number(prompt("Digita el valor de a:"))
+        let b = Number(prompt("Digita el valor de b:"))
+        let c = Number(prompt("Digita el valor de c:"))
+
+        let d = (((b**2) - 4 * a * c)**0,5)
+        
+
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+
+        if (d <=0){
+            alert("Esto no tiene solucion en los reales")
+        }
+
+        else {
+            
+             x1 = -b + d / 2*a 
+             x2 = -b - d / 2*a 
+             alert(`x1 vale: ${x1}`)
+             alert(`x2 vale: ${x2}`)
+        }
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Lista de numeros</h1>
+    <hr>
+    <p>Los numeros positivos son: </p>
+
+    <div id="lstNumeros"></div>
+
+    <p>La media de estos es: </p>
+    <div id="media"></div>
+    
+
+
+
+
+    <script>
+
+        let lista = " "
+        let numero = 0
+        let i = 0
+        let sumatoria = 0
+        let media = 0
+        let contador = -1
+
+        do {
+
+            numero = Number(prompt("Digite un numero positivo: "))
+
+            if (numero >= 0){
+                lista += `${numero},`
+
+            }
+
+        }while(numero > 0)
+
+
+
+        let partes = lista.split(",")
+
+        for( i ; i < partes.length; i++){
+
+            console.log("partes" , partes[i])
+            sumatoria += Number(partes[i])
+            contador += 1
+        }
+
+        console.log("Contador" , contador)
+        console.log("Sumatoria " ,sumatoria)
+
+        media = sumatoria/contador
+
+        document.getElementById("lstNumeros").innerHTML = lista
+        document.getElementById("media").innerHTML = media.toFixed(2) 
+
+    </script>
+    
+</body>
+</html>

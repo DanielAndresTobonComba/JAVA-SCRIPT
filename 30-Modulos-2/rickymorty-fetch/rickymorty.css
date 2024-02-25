@@ -1,0 +1,21 @@
+img{
+    height: 170px;
+}
+
+
+h2 , p{
+    margin: 0px;
+}
+
+div{
+    
+    border: solid;
+    width: 170px;
+    margin: 20px auto;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+

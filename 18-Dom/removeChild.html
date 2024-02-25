@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+</head>
+<body>
+
+    <div class="container">
+            <div class="parent">
+                <p>Hola a todos.</p>
+                <p class="message">Hola soy todo un camper</p>
+            </div>
+    </div>
+
+    <button id="change-message" onclick="agregarElemento()">Agregar elemento</button>
+
+    <button onclick="eliminarElement()">Eliminar elemento</button>
+
+    
+
+
+    <script>
+        function agregarElemento() {
+            const elemento = document.querySelector(".container")
+
+            const div = document.createElement("div")
+
+            div.innerHTML = "<p onclick='alert(\"cogido malicioso\")'> <span style='color:red'> Div con nuevo elemento </span><br><br> </p>"
+
+            elemento.appendChild(div)
+        }
+
+        function eliminarElement(){
+
+            const elemento = document.querySelector(".parent")
+
+            const parrafo = document.querySelector(".message") 
+
+            alert(parrafo.outerHTML)
+
+            elemento.removeChild(parrafo)
+        }
+
+
+        
+
+    </script>
+    
+</body>
+</html>

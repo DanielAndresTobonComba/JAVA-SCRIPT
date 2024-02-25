@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+</head>
+<body>
+
+    <div class="container">
+            <div class="parent">
+                <p>Hola a todos.</p>
+                <p class="message">Hola soy todo un camper</p>
+            </div>
+    </div>
+
+    <input type="text" id="new-message">
+    <button id="change-message" onclick="cambiarMensaje()">Cambiar mensaje</button>
+
+    <button onclick="obtenerDiv()">Obtener nombre del elemento</button>
+
+
+    <script>
+        function cambiarMensaje() {
+            const messageElement = document.querySelector(".message")
+
+            const newMessage = document.getElementById("new-message").value
+
+            messageElement.textContent = newMessage
+        }
+
+
+        function obtenerDiv (){
+            //me da el nombre del primer nodo que encuentra que sea div como una cadena
+            const elemento = document.querySelector("div")
+
+            //da el nombre del nodo del elemento con la clase  .message como una cadena
+            const elemento1 = document.querySelector(".message")
+
+            alert(elemento.nodeName)
+            alert(elemento1.nodeName)
+        }
+
+
+    </script>
+    
+</body>
+</html>

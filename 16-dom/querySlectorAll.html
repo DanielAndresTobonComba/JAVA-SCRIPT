@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .resaltado{
+            color: red;
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="resaltado">Este es el primer parrafo</p>
+    <p class="resaltado">Este es el segundo parrafo</p>
+
+    <button onclick="cambiar()">Cambiar</button>
+
+   <script>
+
+    function cambiar(){
+        let fSize = 18
+    
+        const parrafoResaltado = document.querySelectorAll('.resaltado')
+
+        
+
+        //se usa el foreach para recorrer cada elemento del arreglo que nos devuelve parrafoResultado
+
+        parrafoResaltado.forEach(parrafo =>{
+            parrafo.fontSize = `${fSize}px`
+            fSize += 7
+        })
+
+
+    }
+    </script>
+</body>
+</html>

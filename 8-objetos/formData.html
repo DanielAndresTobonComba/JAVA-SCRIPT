@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="capturarForm()">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad">
+
+        
+    </form>
+    
+    <!-- Siempre colocar los botones fuer del formulario -->
+    <!-- <input type="submit" value="Enviar"> -->
+    <button onclick="capturarForm()">Enviar</button>
+    
+    <script>
+
+        function capturarForm(){
+
+            const form = document.querySelector("form")
+            const formData = new FormData(form)
+
+            
+
+            for (const elem of formData){
+                if (elem[1] >= 17){
+                    alert("Puedes entrar a campus")
+                    //console.log("Puedes entrar a campus")
+                }
+            }
+
+            formData.append("nombre" , "Oscar")
+            //obtener todos los valores de la llave nombre 
+            const nombres = formData.getAll("nombre")
+            
+            console.log(nombres)
+
+        }
+
+        
+
+    </script>
+
+
+</body>
+</html>

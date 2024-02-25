@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let campers = ["Hader" , "Juan" , " Carlos" , "Yulieth"]
+        console.log(campers)
+
+        let frutas = new Array("Pera" , "Manzana" , "Banano" , "Mandarina")
+        console.log(frutas)
+
+        console.log(frutas[3])
+        frutas[3] = "Python"
+
+
+        /* Tendre 5 espacio vacios */
+        let marcas = new Array(5)
+        console.log(marcas)
+
+
+        /* recorrer un arreglo */
+        for (let i = 0 ; i < frutas.length; i++) {
+            console.log(frutas[i])
+        }
+
+        /* push() agregar al ultimo */
+        marcas.push("Ford Fiesta")
+
+        /* unshift() agregar al primero */
+        marcas.push("Twingo")
+
+        /* pop() eliminar el ultimo */
+        frutas.pop()
+
+        /* shift() eliminar al ultimo */
+        frutas.shift()
+
+        /* slice() toma los  elementos por uibcacion no toma el elemento final */
+        console.log(marcas.slice(0,2))
+
+        /* acceder al ultimo elemento */
+        console.log(marcas [marcas.length-1])
+
+        /* delete() elimina el elemento por su ubicacion*/
+        delete marcas[2]
+
+        /* splice (inicio-fin) extrae del arreglo y crea un nuevo arreglo tomo desde el inicio hasta el final */
+
+        /* arreglo.concat(arreglo1)  concatena los arreglos y crea un nuevo arreglo si se le asigna una nueva variable*/
+
+        /* arreglo.join(patron) une todos los elementos de un arreglo sigiendo un patron y crea un arreglo */
+
+        /* areglo.indexOf(elemento) devuelve la posicion del elemento y si no esta devuelve -1 */
+
+
+       
+
+
+        /*  */
+    </script>
+</head>
+<body>
+
+    <h1>mi arreglos</h1>
+    
+</body>
+</html>

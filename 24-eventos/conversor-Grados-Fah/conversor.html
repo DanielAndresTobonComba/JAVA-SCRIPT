@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+
+        <div>
+
+            <label for="entradaCentigrados">Grados Centigrados</label>
+            <input type="" name="valor1" id="entradaCentigrados">
+
+        </div>
+
+        <div>
+
+            <label for="entradaFarenheit">Grados Farenheit</label>
+            <input type="" name="valor2" id="entradaFarenheit" >
+
+        </div>
+
+        <div class="botones">
+
+            <!-- <button id="botonCentigrados">Calcular Farenheit</button>
+            <button id="botonFarenheit">Calcular Centigrados</button> -->
+
+            <button id="botonConvertir">Convertir</button>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function calcularCentigrados(f) {
+            let centigrados = (f - 32) * 5 / 9
+            return centigrados
+        }
+
+        function calcularFarenheit(g) {
+            let farenheit = (g * 9 / 5) + 32
+            return farenheit
+
+        }
+
+
+        function ACentigrados (){
+
+            let gradosFarenheit = Number(document.getElementById("entradaFarenheit").value)
+            let caja = document.getElementById("entradaFarenheit")
+
+            let resultado = document.getElementById("entradaCentigrados")
+
+            console.log(gradosFarenheit)
+
+            if (Number.isNaN(gradosFarenheit)) {
+                resultado.value = `Digite numeros`
+            } else {
+                let centigrados = calcularCentigrados(gradosFarenheit)
+                resultado.value = `${centigrados.toFixed(1)} `
+                resultado.style.backgroundColor = "#71ff74"
+                caja.style.backgroundColor = "#feff64"
+            }
+
+        }
+        
+
+        function AFarenheit (){
+
+            let gradosCentigrados = Number(document.getElementById("entradaCentigrados").value)
+            let caja = document.getElementById("entradaCentigrados")
+
+            console.log(gradosCentigrados)
+
+            let resultado = document.getElementById("entradaFarenheit")
+
+            if (Number.isNaN(gradosCentigrados)) {
+                resultado.value = `Digite numeros`
+            } else {
+                let farenheit = calcularFarenheit(gradosCentigrados)
+                resultado.value = `${farenheit.toFixed(1)} `
+                resultado.style.backgroundColor = "#71ff74"
+                caja.style.backgroundColor = "#feff64"
+
+            }
+        
+        }
+
+        function iniciar (){
+
+            let entradaCentigrados = document.getElementById("entradaCentigrados")
+
+            let entradaFarenheit = document.getElementById("entradaFarenheit")
+
+            entradaCentigrados.addEventListener("keyup", AFarenheit)
+            entradaFarenheit.addEventListener("keyup" , ACentigrados)
+        }
+
+        
+        let boton = document.getElementById("botonConvertir")
+        boton.addEventListener("click" , iniciar())
+
+        /* function alerta (){
+            alert("hi")
+        }
+
+        entradaCentigrados.addEventListener("click" , alerta) */
+
+
+    </script>
+
+</body>
+</html>

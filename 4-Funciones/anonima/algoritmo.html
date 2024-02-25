@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const sumaResta = function (num1 , num2) {
+
+            suma = num1 + num2 
+            resta = num1 -num2 
+
+            resultado = `La suma es: ${suma} y la resta es ${resta}`
+
+            return resultado
+        }
+
+        const multDiv = function (num1 , num2) {
+
+            mult = num1 * num2
+            div = num1/num2 
+
+            resultado = `La multiplicacion es ${mult} y la division es ${div}`
+            return resultado
+        }
+
+        num1 = Number(prompt("Digite el numero1"))
+        num2 = Number(prompt("Digite el numero2"))
+
+        if (num1 > num2){
+
+            alert(sumaResta(num1 ,num2))
+
+        }
+
+        else {
+
+            alert(multDiv(num1,num2))
+
+        }
+
+    </script>
+
+</body>
+</html>

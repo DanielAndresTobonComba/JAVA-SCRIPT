@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    let lista = " "
+    let numero = 0
+    let i = 0
+    let sumatoria = 0
+    let promedio = 0
+    let contador = 0
+
+
+    do {
+
+        numero = prompt("Digite un numero positivo: ")
+
+        if (numero > 0){
+            lista += `${numero} `
+
+        }
+
+    }while(numero > 0)
+
+    console.log(lista)
+    let nuevaLista = lista.trim()
+    let partes = nuevaLista.split(" ")
+    
+
+
+    for( i ; i < partes.length; i++){
+
+    // console.log("partes" , partes[i])
+    sumatoria += Number(partes[i])
+    contador += 1
+
+    }
+
+    promedio = sumatoria/contador 
+    console.log(partes)
+    
+
+    document.write(`La sumatoria es: ${sumatoria} <br>`)
+    document.write(`EL valor promedio: ${promedio} <br>`)
+    document.write(`Numero de valores es: ${contador} <br>`)
+    document.write("Valor mayor:" , Math.max(partes) , "<br>")
+    document.write("Valor menor:" , Math.min(partes) , "<br>")
+
+
+
+</script>
+
+<body>
+    
+</body>
+</html>

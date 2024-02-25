@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <h1>Calcular los primos hasta el 100</h1>
+    <hr>
+    <p>Los primos hasta el numero 100 son:</p>
+    <div id="lstPrimos"></div>
+
+    <script>
+
+        let str = "2, "
+
+        /* inicio , final , incremento */
+        for (let n = 3 ; n <= 100; n+=2){
+
+            esprimo = true
+
+            for(let i=3; i < n; i++){
+                if(n%i == 0){
+                    esprimo = false
+                    break
+                }
+            }
+            /* si esprimo es true imprimira lo que este antes de : sino imprimira la cadena vacia */
+            
+            str += (esprimo) ? `${n}, `: ""
+        }
+
+        document.getElementById("lstPrimos").innerHTML = str
+    </script>
+    
+</body>
+</html>

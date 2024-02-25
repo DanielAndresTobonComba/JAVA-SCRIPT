@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas estudiante</title>
+</head>
+<body>
+
+
+    <script>
+        /* parseInt parseFloat */
+
+        function estadoEstudiante(n1,n2,n3){
+
+            let prom = n(n1,n2,n3)/3
+            if (prom <= 3,9){
+                return "Estudie"
+            } else {
+                return "Becado"
+            }
+        }
+
+        const leerNota = function (msg) {
+            let nota 
+            let repita 
+
+            do {
+                repita = false
+                nota = Number(prompt(msg))
+
+                if (nota == 0) {
+                    nota = undefined
+                    break
+                }
+
+                else if (isNaN(nota) || nota < 1 || nota > 5){
+                    alert("Ingrese una nota valida")
+                    repita = true
+                } 
+            }while(repita)
+
+            return nota
+        }
+
+        
+        let n1 = leerNota("Ingrese la nota1: ")
+        if (n1 != undefined){
+            let n2 = leerNota("Ingrese la nota2: ")
+            if (n2 != undefined){
+                let n3 = leerNota("Ingrese la nota3:")
+                if (n3 != undefined ) {
+                    alert(estadoEstudiante(n1,n2,n3))
+                    
+
+                }
+            }
+        }
+        
+        
+
+    </script>
+    
+</body>
+</html>

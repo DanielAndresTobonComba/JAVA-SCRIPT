@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const persona = {
+            nombre :  'Dani' , 
+            edad : '30',
+            esTrabajador: true,
+            familia: ["Miguel" , "Maria"] ,
+            direccion : {
+                calle : "Calle de los estudiantes",
+                numero : 13,
+                ciudad: "Bucaramanga",
+            } , 
+            caminar : function(){
+                console.log( this.nombre + "Esta caminando") //aqui acceder al nombre del objeto this.nombre y se concatena con esta caminando
+            }
+
+        }
+
+            console.log(persona)//imprimo todo el objecto
+            console.log(persona.nombre) //Accedo al nombre
+            persona.caminar() // accedo a la funcion caminar
+
+            persona.nombre = "Daniela"
+            console.log(persona.nombre) // Se cambia el nombre a daniela
+
+            // Para convertir un objeto en json 
+
+            const cadenaJSON = JSON.stringify(persona) 
+            console.log(cadenaJSON)
+
+            // para convertir un json en objeto
+
+            const objPer = JSON.parse(cadenaJSON) ; 
+            console.log(objPer);
+
+    </script>
+
+</body>
+</html>

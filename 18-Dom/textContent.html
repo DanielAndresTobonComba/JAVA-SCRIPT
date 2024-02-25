@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- modificar el contenido de texto de un elemento  se usa .textContent -->
+
+</head>
+<body>
+
+    <div class="container">
+            <div class="parent">
+                <p>Hola a todos.</p>
+                <p class="message">Hola soy todo un camper</p>
+            </div>
+    </div>
+
+    <input type="text" id="new-message">
+    <button id="change-message" onclick="cambiarMensaje()">Cambiar mensaje</button>
+
+
+    <script>
+        function cambiarMensaje() {
+            const messageElement = document.querySelector(".message")
+
+            const newMessage = document.getElementById("new-message").value
+
+            messageElement.textContent = newMessage
+        }
+
+
+    </script>
+    
+</body>
+</html>

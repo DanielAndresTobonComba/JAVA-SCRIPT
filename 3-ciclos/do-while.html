@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        let max = 10
+        let entrada = 0
+
+        let numeroAdivinar = Math.floor(Math.random()*max)
+        
+        do {
+            entrada = Number(prompt("DIgite el numero"))
+
+            if (entrada < numeroAdivinar){
+                alert("Tu numero es menor")
+            }
+
+            else if(entrada > numeroAdivinar){
+                alert("Tu numero es mayor")
+            }
+
+        }while(entrada != numeroAdivinar)
+
+        alert("Has adivinado el numero")
+        
+    </script>
+</body>
+</html>

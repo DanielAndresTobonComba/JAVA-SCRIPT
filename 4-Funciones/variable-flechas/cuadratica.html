@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* formula cuadratica con funciones anonimas y deben ser const */
+
+ 
+        const raizCuad = (a,b,c) => (((b**2) - 4 * a * c)**0,5)
+
+
+
+        const cuadra = (a , b ,c) => {
+
+            let d = raizCuad(a,b,c)
+            let x1 = 0
+            let x2 = 0
+            let resultado = ""
+
+            if (d <0){
+               resultado = NaN
+               return "NaN"
+            }
+
+            else {
+                
+                x1 = -b + d / 2*a 
+                x2 = -b - d / 2*a 
+
+                resultado = `x1 = ${x1} y x2 = ${x2}`
+                
+            }
+
+            return resultado
+
+        }
+
+        
+
+        let a = Number(prompt("Digita el valor de a:"))
+        let b = Number(prompt("Digita el valor de b:"))
+        let c = Number(prompt("Digita el valor de c:"))
+
+        r = cuadra (a,b,c); 
+
+        if(r.length > 0 && r != "NaN") {
+
+            alert(r)
+
+        } else {
+            alert("La respuesta no existe en los reales")
+        }
+ 
+        
+
+        
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

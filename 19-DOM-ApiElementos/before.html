@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+</head>
+<body>
+
+    <div class="container">
+            <div class="parent">
+                <p>Hola a todos.</p>
+                <p class="message">Hola soy todo un camper</p>
+            </div>
+    </div>
+
+    <button id="" onclick="insertElement()">Insertar Parrafo</button>
+
+    
+
+
+    <script>
+        function insertElement() {
+
+            //Inserta p antes del container div
+
+            const div = document.querySelector("div")
+
+            const p = document.createElement("p")
+
+            p.innerHTML = "<span style='color:red;'> Este es el contenido insertado </span>"
+
+            div.before(p)
+        }
+
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /* varias variables en el mismo let */
+        let user = "john" , age = 22
+
+        /* usar un alert */
+            //alert("hola" / 2)
+
+        /* bigint par numeros muy grandes se coloca una n al final */
+
+      /*   n = 125n
+        console.log(typeof (n)) */
+
+        /* es como el f-string en python pero se usa las comilla invertidas */
+
+        /* let cadena = `Valor bigint ${n}`
+        console.log(cadena) */
+
+        /* null */
+
+        /* let nulo = null
+        console.log("Variable nula: ",nulo) */
+
+        /* la variable var convierte una variable en global y salta los limites del lugar en donde esta ubicada */
+
+
+        /* el ++ aumenta la variable en 1, si el ++ esta antes incrementa y luego asigna la variable, pero si esta despues toma la varible y le suma 1 */
+
+        let n = 5
+        let m = n++
+
+        console.log(n,m)
+
+        console.log(++n)
+
+        console.log(2*n++)
+
+        /* ** es el levado */
+        console.log(n**2)
+
+
+        /* operadores logicos && and , || or , ! not */
+
+        a = 5 
+        b = 2 
+
+        console.log(a **= b)
+
+
+        /* cuando un valor es falso: false , 0 , -0 , 0n, "" , null , undefined , NaN*/
+
+       /* valores verdaderos: true 1 "false" [] , {} , function(){}, new Date() , 42n */
+
+
+       /* valores "nullish" */
+
+       /* OPERADORES DE CADENA */
+       /*Concatenacion: Se usan con signo + */
+
+       let cad1 ="Aprendiendo JavaScript"
+       let cad2 =" con el profe xd"
+
+       console.log(cad1 + cad2)
+
+
+       /* template string */
+       console.log("Aprendiendo")
+
+       /* templeta literals */
+       const mult = 
+`Esta es 
+una cadena 
+con varias 
+lineas`
+
+       console.log(mult)
+
+       /* Repetir una cadenas varias veces */
+
+       console.log("*".repeat(5))
+
+       /* starsWith(str,index) 1ro parametro y 2do desde donde empieza */
+
+       str="hola mundo"
+       console.log(str.starsWith)
+
+
+       /* endsWith(str,lenght) para saber como acaba una frase y el 2do desde donde empieza a revizar y reviza de derecha a izquierda */
+
+        /* para tomar partes de la cadena con dos cordenadas no toma el limite*/
+        console.log("midudev".slice(0,4))
+
+        /* desde  4 en adelante */
+        console.log("midudev".slice(4))
+
+        
+        console.log("midudev".slice(0,1))
+
+       /* includes(str,index) si esta dentro de la variable devuelve verdadero */
+
+       /* trim borra los espacios el principio y al final */
+
+       /* split separa todo el contenido por un patron split(" ") */
+
+
+
+       /* promp para recibir valores del usuario y el segundo parametro es el valor pro defecto*/
+
+       /* edad = prompt("Ingrese su edad:" , 18)
+       console.log(edad) */
+
+        /* confirm para solicitar */
+
+        /* let esJefe = confirm("Eres el jefe"); console.log(esJefe) */
+
+
+
+        /* conversor de datos */
+        /* to string */
+
+        let value = true
+        value = String(value)
+        console.log( typeof(value))
+
+
+        /* Number para convertir una cadena en un numero */
+
+        let edad = "123"
+        console.log(typeof(edad))
+        console.log(typeof Number(edad))
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

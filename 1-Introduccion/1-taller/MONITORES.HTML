@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <p>Numero de campers: <p id="cantCampers"></p></p>
+    <p>Numero de computadores necesarias: <p id="cantMonitores"></p></p>
+
+    <script>
+
+        let campers = prompt("Digite el numero de campers")
+
+        let monitores = campers*2
+
+
+        console.log(`EL cantidad de minitores requridos son: ${monitores}`);
+
+        document.getElementById("cantCampers").innerHTML = campers
+        
+        document.getElementById("cantMonitores").innerHTML = campers
+
+
+    </script>
+    
+</body>
+</html>

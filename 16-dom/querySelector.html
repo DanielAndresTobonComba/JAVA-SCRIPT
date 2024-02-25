@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* debo crear el estilo en css para poder intevenirla */
+        .resaltado{
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="parrafo1" class="resaltado">Este es el primer parrafo</p>
+    <p id="parrafo2">Este es el segundo parrafo</p>
+
+
+    <script>
+
+        // EL QUERY SELECTOR SOLO TOMA EL PRIMER ELEMENTO QUE ENCUENTRE
+
+        const parrafoResaltado = document.querySelector('.resaltado')
+
+        parrafoResaltado.style.fontSize = '30px'
+
+
+        const segundoParrafo = document.querySelector('#parrafo2')
+
+        segundoParrafo.innerHTML =  "Texto modificado para el segundo parrafo"
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        
+        let contador = 0
+        let numAtletas = Number(prompt("Cuanto atletas desea ingresar?"))
+        let campeona = ""
+        let puntajeCampeona = 0
+
+        for( let i = 0 ; i < numAtletas; i++){
+
+            
+
+            let nombre = prompt("Digite el nombre del atleta")
+            let salto = Number(prompt("Digite la distancia de salto"))
+
+            
+            
+            
+            if (salto > puntajeCampeona){
+                campeona = nombre 
+                puntajeCampeona = salto
+            }
+
+            if (salto > 15.50){
+
+                contador += 1
+            }
+
+            
+            
+
+            /* lstNombres += `${nombre}, `
+            lstSaltos += `${salto}, ` */
+
+            
+            
+        }
+
+        alert(`La campeona es: ${campeona} y ${puntajeCampeona}`)
+
+       
+        
+        
+       
+
+        /* console.log(lstNombres)
+        console.log(lstSaltos)
+
+        maximo = Math.max(lstSaltos)
+        console.log(lstSaltos) */
+
+    </script>
+    
+</body>
+</html>
