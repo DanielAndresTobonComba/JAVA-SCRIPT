@@ -1,8 +1,0 @@
-En un conbmunto no se repiten los elementos 
-
-new Set()
-add() agregar valores
-delete() eliminar datos 
-has()
-forEach()
-size tamaño del conjunto

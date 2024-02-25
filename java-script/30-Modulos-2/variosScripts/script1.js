@@ -1,1 +1,0 @@
-const porcentaje = 0.04
